@@ -2,7 +2,7 @@
 
 ## Robo Advisor for Retirement Plans
 
-![Robot](../Images/robot.jpg)
+![Robot](RoboAdvisor/Images/robot.jpg)
 
 *Photo by [Alex Knight](https://www.pexels.com/@alex-knight-1272316?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) from [Pexels](https://www.pexels.com/photo/high-angle-photo-of-robot-2599244/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) | [Free License](https://www.pexels.com/photo-license/)*
 
@@ -24,11 +24,11 @@ I accomplished the following main tasks:
 
 ### Files
 
-* [lambda_function.py](../Lambda_Function/lambda_function.py)
-* [correct_dialog.txt](../Test_Cases/correct_dialog.txt)
-* [age_error.txt](../Test_Cases/age_error.txt)
-* [incorrect_amount_error.txt](../Test_Cases/incorrect_amount_error.txt)
-* [negative_age_error.txt](../Test_Cases/negative_age_error.txt)
+* [lambda_function.py](RoboAdvisor/Lambda_Function/lambda_function.py)
+* [correct_dialog.txt](RoboAdvisor/Test_Cases/correct_dialog.txt)
+* [age_error.txt](RoboAdvisor/Test_Cases/age_error.txt)
+* [incorrect_amount_error.txt](RoboAdvisor/Test_Cases/incorrect_amount_error.txt)
+* [negative_age_error.txt](RoboAdvisor/Test_Cases/negative_age_error.txt)
 
 ---
 
@@ -56,13 +56,13 @@ The response cards were formatted for the intent.
 
 Once my Robo Advisor was built I tested it in the chatbot window.
 
-![Robo Advisor test](Images/bot-test-no-lambda.gif)
+![Robo Advisor test](RoboAdvisor/Images/bot-test-no-lambda.gif)
 
 #### Enhanced the Robo Advisor with an Amazon Lambda Function
 
 I created an Amazon Lambda function from scratch that validated the data provided by the user on the Robo Advisor. The new lambda function was named `recommendPortfolio` and I selected Python 3.7 as runtime.
 
-I deleted the AWS generated default lines of code, then pasted in the starter code provided in [lambda_function.py](Lambda_Function/lambda_function.py) and completed the `recommend_portfolio()` function by following these guidelines:
+I deleted the AWS generated default lines of code, then pasted in the starter code provided in [lambda_function.py](RoboAdvisor/Lambda_Function/lambda_function.py) and completed the `recommend_portfolio()` function by following these guidelines:
 
 ##### User Input Validation
 
@@ -84,7 +84,7 @@ Once I finished coding my lambda function, I tested it using the [sample test ca
 
 After successfully testing my code, I opened the Amazon Lex Console and navigated to the `RecommendPortfolio` bot configuration, then integrated my new lambda function by selecting it in the _Lambda initialization and validation_ and _Fulfillment_ sections. Once I built my bot, I had a conversation as follows.
 
-![Robo Advisor test with Lambda](Images/bot-test-with-lambda.gif)
+![Robo Advisor test with Lambda](RoboAdvisor/Images/bot-test-with-lambda.gif)
 
 ### Submission
 
