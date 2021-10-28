@@ -16,15 +16,15 @@ I accomplished the following main tasks:
 
 1. **[Initial Robo Advisor Configuration:](#Initial-Robo-Advisor-Configuration)** Defined an Amazon Lex bot with a single intent that establishes a conversation about the requirements to suggest an investment portfolio for retirement.
 
-2. **[Build and Test the Robo Advisor](#Build-and-Test-the-Robo-Advisor):** Ensured the bot is working and responding accurately along with the conversation with the user, by building and testing it.
+2. **[Built and Tested the Robo Advisor](#Build-and-Test-the-Robo-Advisor):** Ensured the bot is working and responding accurately along with the conversation with the user by building and testing it.
 
-3. **[Enhance the Robo Advisor with an Amazon Lambda Function:](#Enhance-the-Robo-Advisor-with-an-Amazon-Lambda-Function)** Created an Amazon Lambda function that validates the user's input and returns the investment portfolio recommendation. This task includes testing the Amazon Lambda function and making the integration with the bot.
+3. **[Enhanced the Robo Advisor with an Amazon Lambda Function:](#Enhance-the-Robo-Advisor-with-an-Amazon-Lambda-Function)** Created an Amazon Lambda function that validates the user's input and returns the investment portfolio recommendation. This task includesd testing the Amazon Lambda function and making the integration with the bot.
 
 ---
 
 ### Files
 
-* [lambda_function.py](Starter_Files/lambda_function.py)
+* [lambda_function.py](Lambda_Function/lambda_function.py)
 * [correct_dialog.txt](Test_Cases/correct_dialog.txt)
 * [age_error.txt](Test_Cases/age_error.txt)
 * [incorrect_amount_error.txt](Test_Cases/incorrect_amount_error.txt)
@@ -58,11 +58,11 @@ Once my Robo Advisor was built I tested it in the chatbot window.
 
 ![Robo Advisor test](Images/bot-test-no-lambda.gif)
 
-#### Enhance the Robo Advisor with an Amazon Lambda Function
+#### Enhanced the Robo Advisor with an Amazon Lambda Function
 
-I created an Amazon Lambda function from scratch that validated the data provided by the user on the Robo Advisor.The new lambda function was named `recommendPortfolio` and I selected Python 3.7 as runtime.
+I created an Amazon Lambda function from scratch that validated the data provided by the user on the Robo Advisor. The new lambda function was named `recommendPortfolio` and I selected Python 3.7 as runtime.
 
-I deleted the AWS generated default lines of code, then pastes in the starter code provided in [lambda_function.py](Starter_Files/lambda_function.py) and completed the `recommend_portfolio()` function by following these guidelines:
+I deleted the AWS generated default lines of code, then pasted in the starter code provided in [lambda_function.py](Lambda_Function/lambda_function.py) and completed the `recommend_portfolio()` function by following these guidelines:
 
 ##### User Input Validation
 
@@ -80,9 +80,9 @@ Once the intent is fulfilled, the bot will respond with an investment recommenda
 * **high:** "20% bonds (AGG), 80% equities (SPY)"
 * **very high:** "0% bonds (AGG), 100% equities (SPY)"
 
-Once I finished coding my lambda function, tested it using the [sample test cases](Test_Cases/) provided for this homework.
+Once I finished coding my lambda function, I tested it using the [sample test cases](Test_Cases/) provided for this homework.
 
-After successfully testing my code, I opened the Amazon Lex Console and navigated to the `RecommendPortfolio` bot configuration, then integrated my new lambda function by selecting it in the _Lambda initialization and validation_ and _Fulfillment_ sections. Once I built my bot,I had a conversation as follows.
+After successfully testing my code, I opened the Amazon Lex Console and navigated to the `RecommendPortfolio` bot configuration, then integrated my new lambda function by selecting it in the _Lambda initialization and validation_ and _Fulfillment_ sections. Once I built my bot, I had a conversation as follows.
 
 ![Robo Advisor test with Lambda](Images/bot-test-with-lambda.gif)
 
