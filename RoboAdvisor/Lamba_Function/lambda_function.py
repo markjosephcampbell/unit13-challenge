@@ -115,6 +115,8 @@ def recommend_portfolio(intent_request):
             slots[validate_data["violatedSlot"]] = None
             return elicit_slot(intent_request["sessionAttributes"], intent_request["currentIntent"]["name"], slots, validate_data["violatedSlot"], validate_data["message"])
         
+        ### Running into errors at the beginning of the chat experience ###
+        
         ### YOUR DATA VALIDATION CODE ENDS HERE ###
         
         # Fetch current session attibutes
