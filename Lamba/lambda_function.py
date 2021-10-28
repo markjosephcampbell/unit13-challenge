@@ -97,10 +97,26 @@ def recommend_portfolio(intent_request):
         # Use the elicitSlot dialog action to re-prompt
         # for the first violation detected.
 
-        ### YOUR DATA VALIDATION CODE STARTS HERE ###
-
+       ### YOUR DATA VALIDATION CODE STARTS HERE ###
+        slots = get_slots(intent_request)
+        validate_data = build_validation_result(True, None, None)
+        if age is None:
+            validate_data = build_validation_result(False, "age", "You need to provide age")
+        elif parse_int(age) >= 65:
+            validate_data = build_validation_result(False, "age", "You age should be less than or equal to 65")
+        elif parse_int(age) <= 0:
+            validate_data = build_validation_result(False, "age", "You age should be greater than 0")
+        if investment_amount is None:
+            validate_data = build_validation_result(False, "investmentAmount", "You need to provide investment")
+        elif parse_int(investment_amount) < 5000:
+            validate_data = build_validation_result(False, "investmentAmount", "You investment should be greater than $5000")
+        
+        if not validate_data["isValid"]:
+            slots[validate_data["violatedSlot"]] = None
+            return elicit_slot(intent_request["sessionAttributes"], intent_request["currentIntent"]["name"], slots, validate_data["violatedSlot"], validate_data["message"])
+        
         ### YOUR DATA VALIDATION CODE ENDS HERE ###
-
+        
         # Fetch current session attibutes
         output_session_attributes = intent_request["sessionAttributes"]
 
