@@ -2,7 +2,7 @@
 
 ## Robo Advisor for Retirement Plans
 
-![Robot](Images/robot.jpg)
+![Robot](../Images/robot.jpg)
 
 *Photo by [Alex Knight](https://www.pexels.com/@alex-knight-1272316?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) from [Pexels](https://www.pexels.com/photo/high-angle-photo-of-robot-2599244/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) | [Free License](https://www.pexels.com/photo-license/)*
 
@@ -24,11 +24,11 @@ I accomplished the following main tasks:
 
 ### Files
 
-* [lambda_function.py](Lambda_Function/lambda_function.py)
-* [correct_dialog.txt](Test_Cases/correct_dialog.txt)
-* [age_error.txt](Test_Cases/age_error.txt)
-* [incorrect_amount_error.txt](Test_Cases/incorrect_amount_error.txt)
-* [negative_age_error.txt](Test_Cases/negative_age_error.txt)
+* [lambda_function.py](../Lambda_Function/lambda_function.py)
+* [correct_dialog.txt](../Test_Cases/correct_dialog.txt)
+* [age_error.txt](../Test_Cases/age_error.txt)
+* [incorrect_amount_error.txt](../Test_Cases/incorrect_amount_error.txt)
+* [negative_age_error.txt](../Test_Cases/negative_age_error.txt)
 
 ---
 
