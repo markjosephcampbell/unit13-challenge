@@ -97,7 +97,7 @@ def recommend_portfolio(intent_request):
         # for the first violation detected.
 
         ### YOUR DATA VALIDATION CODE STARTS HERE ###
-            slots = get_slots(intent_request)
+        slots = get_slots(intent_request)
         validate_data = build_validation_result(True, None, None)
         if age is None:
             validate_data = build_validation_result(False, "age", "Please provide your age")
@@ -135,7 +135,7 @@ def recommend_portfolio(intent_request):
         "very high": "0% bonds (AGG), 100% equities (SPY)"
     }
     
-    initial_recommendation = inv_level[risk_level]
+    initial_recommendation = inv_level[risk_level.lower()]
 
 
 
@@ -165,7 +165,7 @@ def dispatch(intent_request):
     intent_name = intent_request["currentIntent"]["name"]
 
     # Dispatch to bot's intent handlers
-    if intent_name == "RecommendPortfolio":
+    if intent_name == "recommendPortfolioB":
         return recommend_portfolio(intent_request)
 
     raise Exception("Intent with name " + intent_name + " not supported")
