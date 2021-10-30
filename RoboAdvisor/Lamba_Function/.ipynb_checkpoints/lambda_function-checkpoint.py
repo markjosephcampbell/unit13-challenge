@@ -26,7 +26,6 @@ def build_validation_result(is_valid, violated_slot, message_content):
         "message": {"contentType": "PlainText", "content": message_content},
     }
 
-
 ### Dialog Actions Helper Functions ###
 def get_slots(intent_request):
     """
@@ -97,8 +96,8 @@ def recommend_portfolio(intent_request):
         # Use the elicitSlot dialog action to re-prompt
         # for the first violation detected.
 
-       ### YOUR DATA VALIDATION CODE STARTS HERE ###
-        slots = get_slots(intent_request)
+        ### YOUR DATA VALIDATION CODE STARTS HERE ###
+            slots = get_slots(intent_request)
         validate_data = build_validation_result(True, None, None)
         if age is None:
             validate_data = build_validation_result(False, "age", "Please provide your age")
@@ -115,10 +114,9 @@ def recommend_portfolio(intent_request):
             slots[validate_data["violatedSlot"]] = None
             return elicit_slot(intent_request["sessionAttributes"], intent_request["currentIntent"]["name"], slots, validate_data["violatedSlot"], validate_data["message"])
         
-        ### Running into errors at the beginning of the chat experience ###
-        
+
         ### YOUR DATA VALIDATION CODE ENDS HERE ###
-        
+
         # Fetch current session attibutes
         output_session_attributes = intent_request["sessionAttributes"]
 
@@ -127,6 +125,19 @@ def recommend_portfolio(intent_request):
     # Get the initial investment recommendation
 
     ### YOUR FINAL INVESTMENT RECOMMENDATION CODE STARTS HERE ###
+    
+    inv_level = {
+        "none": "100% bonds (AGG), 0% equities (SPY)",
+        "very low": "80% bonds (AGG), 20% equities (SPY)",
+        "low": "60% bonds (AGG), 40% equities (SPY)",
+        "medium": "40% bonds (AGG), 60% equities (SPY)",
+        "high": "20% bonds (AGG), 80% equities (SPY)",
+        "very high": "0% bonds (AGG), 100% equities (SPY)"
+    }
+    
+    initial_recommendation = inv_level[risk_level]
+
+
 
     ### YOUR FINAL INVESTMENT RECOMMENDATION CODE ENDS HERE ###
 
